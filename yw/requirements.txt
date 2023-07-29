@@ -1,0 +1,2 @@
+networkx==2.6.3
+or2ywtool==0.0.18
