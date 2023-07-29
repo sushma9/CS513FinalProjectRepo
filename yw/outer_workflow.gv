@@ -24,11 +24,14 @@ SQLite_IC_Check [shape=record rankdir=LR label="{<f0> SQLite_IC_Check |<f1> Load
 node[shape=box style="rounded,filled" fillcolor="#FFFFCC" peripheries=1 fontname=Helvetica]
 
 /* Nodes for non-parameter data channels in workflow */
+"Menu.csv" [shape=record rankdir=LR label="{<f0> Menu.csv |<f1> file\://Data/Menu.csv}"];
+"Dish.csv" [shape=record rankdir=LR label="{<f0> Dish.csv |<f1> file\://Data/Dish.csv}"];
 "menu.csv" [shape=record rankdir=LR label="{<f0> menu.csv |<f1> file\://data/Menu_post_or.csv}"];
 "dish.csv" [shape=record rankdir=LR label="{<f0> dish.csv |<f1> file\://data/Dish_post_or.csv}"];
 "MenuItem.csv" [shape=record rankdir=LR label="{<f0> MenuItem.csv |<f1> file\://Data/MenuItem.csv}"];
 "Menu_cleaned.csv" [shape=record rankdir=LR label="{<f0> Menu_cleaned.csv |<f1> file\://Data_Cleaned/Menu_cleaned.csv}"];
 "Menu_item_cleaned.csv" [shape=record rankdir=LR label="{<f0> Menu_item_cleaned.csv |<f1> file\://Data_Cleaned/Menu_item_cleaned.csv}"];
+"MenuPage.csv" [shape=record rankdir=LR label="{<f0> MenuPage.csv |<f1> file\://Data/MenuPage.csv}"];
 "Dish_cleaned.csv" [shape=record rankdir=LR label="{<f0> Dish_cleaned.csv |<f1> file\://Data_Cleaned/Dish_cleaned.csv}"];
 menu [shape=record rankdir=LR label="{<f0> menu |<f1> sqlite\://database.db/MenuDB}"];
 menuitem [shape=record rankdir=LR label="{<f0> menuitem |<f1> sqlite\://database.db/MenuItemDB}"];
@@ -68,9 +71,10 @@ SQL_Load_IC_Script -> SQLite_IC_Check
 node[shape=circle style="rounded,filled" fillcolor="#FFFFFF" peripheries=1 fontname=Helvetica width=0.2]
 
 /* Nodes representing workflow input ports */
-"menu.csv_input_port" [label=""]
-"dish.csv_input_port" [label=""]
+"Menu.csv_input_port" [label=""]
+"Dish.csv_input_port" [label=""]
 "MenuItem.csv_input_port" [label=""]
+"MenuPage.csv_input_port" [label=""]
 
 /* Style for nodes representing workflow output ports */
 node[shape=circle style="rounded,filled" fillcolor="#FFFFFF" peripheries=1 fontname=Helvetica width=0.2]
@@ -82,9 +86,10 @@ menupage_output_port [label=""]
 dish_output_port [label=""]
 
 /* Edges from input ports to channels */
-"menu.csv_input_port" -> "menu.csv"
-"dish.csv_input_port" -> "dish.csv"
+"Menu.csv_input_port" -> "Menu.csv"
+"Dish.csv_input_port" -> "Dish.csv"
 "MenuItem.csv_input_port" -> "MenuItem.csv"
+"MenuPage.csv_input_port" -> "MenuPage.csv"
 
 /* Edges from channels to output ports */
 menu -> menu_output_port

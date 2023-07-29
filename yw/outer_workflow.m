@@ -5,7 +5,7 @@
 # @in MenuItem.csv  @uri file://data/MenuItem.csv
 # @in MenuPage.csv  @uri file://data/MenuPage.csv
 
-#     @begin MenuClean  @desc Use OpenRefine to clean Menu
+#     @begin Drop rows with venue  @desc Use OpenRefine to clean Menu
 #     @in Menu.csv  @uri file://data/Menu.csv
 #     @out menu.csv  @uri file://data/menu_post_or.csv
 #     @end MenuClean
