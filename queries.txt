@@ -1,0 +1,72 @@
+SELECT id FROM Menu
+            WHERE id IS NULL
+SELECT id FROM Dish
+            WHERE id IS NULL
+SELECT id FROM MenuItem
+            WHERE id IS NULL
+SELECT id FROM MenuPage
+            WHERE id IS NULL
+SELECT id, COUNT(*) FROM Menu
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, COUNT(*) FROM Dish
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, COUNT(*) FROM MenuItem
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, COUNT(*) FROM MenuPage
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, menus_appeared FROM Dish
+            WHERE menus_appeared IS NULL OR menus_appeared < 0
+SELECT id, lowest_price, highest_price FROM Dish
+           WHERE lowest_price > highest_price
+SELECT id, first_appeared, last_appeared FROM Dish
+           WHERE first_appeared > last_appeared
+SELECT * FROM Menu
+           WHERE page_count = 0 OR page_count IS NULL
+SELECT DISTINCT menu_id FROM MenuPage
+           WHERE menu_id NOT IN (
+              SELECT id FROM Menu
+           )
+SELECT venue FROM Menu
+           WHERE venue IS NULL
+SELECT event FROM Menu
+           WHERE event IS NULL
+SELECT id FROM MenuCleaned
+            WHERE id IS NULL
+SELECT id FROM DishCleaned
+            WHERE id IS NULL
+SELECT id FROM MenuItemCleaned
+            WHERE id IS NULL
+SELECT menu_page_id FROM MenuJoinMenuPage
+           WHERE menu_page_id IS NULL
+SELECT id, COUNT(*) FROM MenuCleaned
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, COUNT(*) FROM DishCleaned
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT id, COUNT(*) FROM MenuItemCleaned
+            GROUP BY id
+            HAVING COUNT(*) > 1
+SELECT menu_page_id, COUNT(*) FROM MenuJoinMenuPage
+            GROUP BY menu_page_id
+            HAVING COUNT(*) > 1
+SELECT id, menus_appeared FROM DishCleaned
+            WHERE menus_appeared IS NULL OR menus_appeared < 0
+SELECT id, lowest_price, highest_price FROM DishCleaned
+           WHERE lowest_price > highest_price
+SELECT id, first_appeared, last_appeared FROM DishCleaned
+           WHERE first_appeared > last_appeared
+SELECT * FROM MenuCleaned
+           WHERE page_count = 0 OR page_count IS NULL
+SELECT DISTINCT menu_id FROM MenuJoinMenuPage
+           WHERE menu_id NOT IN (
+              SELECT id FROM MenuCleaned
+           )
+SELECT venue FROM MenuCleaned
+           WHERE venue IS NULL
+SELECT event FROM MenuCleaned
+           WHERE event IS NULL
