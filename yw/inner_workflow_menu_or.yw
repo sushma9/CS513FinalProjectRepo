@@ -1,0 +1,380 @@
+#@begin Parallel_OR #@desc Parallel OpenRefine Workflow
+#@param expression:value
+#@param expression:value.trim()
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@param expression:value.toUppercase()
+#@in place_2
+#@in venue_1
+#@in location_type
+#@in location
+#@in event_1
+#@in location_6
+#@in notes
+#@in occasion_1
+#@in event_3
+#@in venue_9
+#@in event_6
+#@in name_1
+#@in event_9
+#@in status
+#@in place_1
+#@in occasion_3
+#@in sponsor_3
+#@in language
+#@in place_3
+#@in location_5
+#@in occasion_2
+#@in venue
+#@in sponsor
+#@in sponsor_4
+#@in sponsor_5
+#@in event_7
+#@in event_5
+#@in currency
+#@in event_2
+#@in location_1
+#@in call_number_1
+#@in date
+#@in venue_4
+#@in location_3
+#@in event_4
+#@in event_8
+#@in sponsor_1
+#@in place
+#@in notes_1
+#@in keywords
+#@in currency_1
+#@in currency_2
+#@in event
+#@in location_7
+#@in venue_5
+#@in name_2
+#@in occasion
+#@in call_number
+#@in date_1
+#@in location_4
+#@in venue_6
+#@in venue_3
+#@in sponsor_2
+#@in location_2
+#@in venue_2
+#@in venue_7
+#@in name
+#@in venue_8
+#@in notes_2
+#@out CleanData
+#@begin core/text-transform0 #@desc Text transform on cells in column name using expression value.trim()
+#@param expression:value.trim()
+#@in name
+#@out name_1
+#@end core/text-transform0
+#@begin core/text-transform1 #@desc Text transform on cells in column name using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in name_1
+#@out name_2
+#@end core/text-transform1
+#@begin core/text-transform2 #@desc Text transform on cells in column name using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in name_2
+#@out name_3
+#@end core/text-transform2
+#@begin core/text-transform3 #@desc Text transform on cells in column sponsor using expression value.trim()
+#@param expression:value.trim()
+#@in sponsor
+#@out sponsor_1
+#@end core/text-transform3
+#@begin core/text-transform4 #@desc Text transform on cells in column sponsor using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in sponsor_1
+#@out sponsor_2
+#@end core/text-transform4
+#@begin core/text-transform5 #@desc Text transform on cells in column sponsor using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in sponsor_2
+#@out sponsor_3
+#@end core/text-transform5
+#@begin core/text-transform6 #@desc Text transform on cells in column event using expression value.trim()
+#@param expression:value.trim()
+#@in event
+#@out event_1
+#@end core/text-transform6
+#@begin core/text-transform7 #@desc Text transform on cells in column event using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in event_1
+#@out event_2
+#@end core/text-transform7
+#@begin core/text-transform8 #@desc Text transform on cells in column event using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in event_2
+#@out event_3
+#@end core/text-transform8
+#@begin core/text-transform9 #@desc Text transform on cells in column venue using expression value.trim()
+#@param expression:value.trim()
+#@in venue
+#@out venue_1
+#@end core/text-transform9
+#@begin core/text-transform10 #@desc Text transform on cells in column venue using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in venue_1
+#@out venue_2
+#@end core/text-transform10
+#@begin core/text-transform11 #@desc Text transform on cells in column venue using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in venue_2
+#@out venue_3
+#@end core/text-transform11
+#@begin core/text-transform12 #@desc Text transform on cells in column venue using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in venue_3
+#@out venue_4
+#@end core/text-transform12
+#@begin core/text-transform13 #@desc Text transform on cells in column place using expression value.trim()
+#@param expression:value.trim()
+#@in place
+#@out place_1
+#@end core/text-transform13
+#@begin core/text-transform14 #@desc Text transform on cells in column place using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in place_1
+#@out place_2
+#@end core/text-transform14
+#@begin core/text-transform15 #@desc Text transform on cells in column place using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in place_2
+#@out place_3
+#@end core/text-transform15
+#@begin core/text-transform16 #@desc Text transform on cells in column occasion using expression value.trim()
+#@param expression:value.trim()
+#@in occasion
+#@out occasion_1
+#@end core/text-transform16
+#@begin core/text-transform17 #@desc Text transform on cells in column occasion using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in occasion_1
+#@out occasion_2
+#@end core/text-transform17
+#@begin core/text-transform18 #@desc Text transform on cells in column occasion using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in occasion_2
+#@out occasion_3
+#@end core/text-transform18
+#@begin core/text-transform19 #@desc Text transform on cells in column notes using expression value.trim()
+#@param expression:value.trim()
+#@in notes
+#@out notes_1
+#@end core/text-transform19
+#@begin core/text-transform20 #@desc Text transform on cells in column notes using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in notes_1
+#@out notes_2
+#@end core/text-transform20
+#@begin core/text-transform21 #@desc Text transform on cells in column notes using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in notes_2
+#@out notes_3
+#@end core/text-transform21
+#@begin core/text-transform22 #@desc Text transform on cells in column call_number using expression value.trim()
+#@param expression:value.trim()
+#@in call_number
+#@out call_number_1
+#@end core/text-transform22
+#@begin core/text-transform23 #@desc Text transform on cells in column call_number using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in call_number_1
+#@out call_number_2
+#@end core/text-transform23
+#@begin core/column-removal24 #@desc Remove column keywords
+#@in keywords
+#@out remove-keywords
+#@end core/column-removal24
+#@begin core/column-removal25 #@desc Remove column language
+#@in language
+#@out remove-language
+#@end core/column-removal25
+#@begin core/column-removal26 #@desc Remove column location_type
+#@in location_type
+#@out remove-location_type
+#@end core/column-removal26
+#@begin core/text-transform27 #@desc Text transform on cells in column date using expression value.trim()
+#@param expression:value.trim()
+#@in date
+#@out date_1
+#@end core/text-transform27
+#@begin core/text-transform28 #@desc Text transform on cells in column date using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in date_1
+#@out date_2
+#@end core/text-transform28
+#@begin core/text-transform29 #@desc Text transform on cells in column location using expression value.trim()
+#@param expression:value.trim()
+#@in location
+#@out location_1
+#@end core/text-transform29
+#@begin core/text-transform30 #@desc Text transform on cells in column location using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in location_1
+#@out location_2
+#@end core/text-transform30
+#@begin core/text-transform31 #@desc Text transform on cells in column location using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in location_2
+#@out location_3
+#@end core/text-transform31
+#@begin core/text-transform32 #@desc Text transform on cells in column currency using expression value.trim()
+#@param expression:value.trim()
+#@in currency
+#@out currency_1
+#@end core/text-transform32
+#@begin core/text-transform33 #@desc Text transform on cells in column currency using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in currency_1
+#@out currency_2
+#@end core/text-transform33
+#@begin core/text-transform34 #@desc Text transform on cells in column currency using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in currency_2
+#@out currency_3
+#@end core/text-transform34
+#@begin core/text-transform35 #@desc Text transform on cells in column status using expression value.toUppercase()
+#@param expression:value.toUppercase()
+#@in status
+#@out status_1
+#@end core/text-transform35
+#@begin core/text-transform36 #@desc Text transform on cells in column event using expression grel:value.replace(/[^\\p{L}\\p{N}\\s]/, '')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@in event_3
+#@out event_4
+#@end core/text-transform36
+#@begin core/text-transform37 #@desc Text transform on cells in column venue using expression grel:value.replace(/[^\\p{L}\\p{N}\\s]/, '')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@in venue_4
+#@out venue_5
+#@end core/text-transform37
+#@begin core/text-transform38 #@desc Text transform on cells in column place using expression grel:value.replace(/[^\\p{L}\\p{N}\\s]/, '')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@in place_3
+#@out place_4
+#@end core/text-transform38
+#@begin core/text-transform39 #@desc Text transform on cells in column occasion using expression grel:value.replace(/[^\\p{L}\\p{N}\\s]/, '')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@in occasion_3
+#@out occasion_4
+#@end core/text-transform39
+#@begin core/text-transform40 #@desc Text transform on cells in column location using expression grel:value.replace(/[^\\p{L}\\p{N}\\s]/, '')
+#@param expression:grel:value.replace(/[^\\p{L}\\p{N}\\s]/,_'')
+#@in location_3
+#@out location_4
+#@end core/text-transform40
+#@begin core/mass-edit41 #@desc Mass edit cells in column sponsor
+#@param expression:value
+#@in sponsor_3
+#@out sponsor_4
+#@end core/mass-edit41
+#@begin core/mass-edit42 #@desc Mass edit cells in column sponsor
+#@param expression:value
+#@in sponsor_4
+#@out sponsor_5
+#@end core/mass-edit42
+#@begin core/mass-edit43 #@desc Mass edit cells in column sponsor
+#@param expression:value
+#@in sponsor_5
+#@out sponsor_6
+#@end core/mass-edit43
+#@begin core/mass-edit44 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_4
+#@out event_5
+#@end core/mass-edit44
+#@begin core/mass-edit45 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_5
+#@out event_6
+#@end core/mass-edit45
+#@begin core/mass-edit46 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_6
+#@out event_7
+#@end core/mass-edit46
+#@begin core/mass-edit47 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_7
+#@out event_8
+#@end core/mass-edit47
+#@begin core/mass-edit48 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_8
+#@out event_9
+#@end core/mass-edit48
+#@begin core/mass-edit49 #@desc Mass edit cells in column event
+#@param expression:value
+#@in event_9
+#@out event_10
+#@end core/mass-edit49
+#@begin core/mass-edit50 #@desc Mass edit cells in column venue
+#@param expression:value
+#@in venue_5
+#@out venue_6
+#@end core/mass-edit50
+#@begin core/mass-edit51 #@desc Mass edit cells in column venue
+#@param expression:value
+#@in venue_6
+#@out venue_7
+#@end core/mass-edit51
+#@begin core/mass-edit52 #@desc Mass edit cells in column venue
+#@param expression:value
+#@in venue_7
+#@out venue_8
+#@end core/mass-edit52
+#@begin core/mass-edit53 #@desc Mass edit cells in column venue
+#@param expression:value
+#@in venue_8
+#@out venue_9
+#@end core/mass-edit53
+#@begin core/mass-edit54 #@desc Mass edit cells in column venue
+#@param expression:value
+#@in venue_9
+#@out venue_10
+#@end core/mass-edit54
+#@begin core/mass-edit55 #@desc Mass edit cells in column location
+#@param expression:value
+#@in location_4
+#@out location_5
+#@end core/mass-edit55
+#@begin core/mass-edit56 #@desc Mass edit cells in column location
+#@param expression:value
+#@in location_5
+#@out location_6
+#@end core/mass-edit56
+#@begin core/mass-edit57 #@desc Mass edit cells in column location
+#@param expression:value
+#@in location_6
+#@out location_7
+#@end core/mass-edit57
+#@begin core/mass-edit58 #@desc Mass edit cells in column location
+#@param expression:value
+#@in location_7
+#@out location_8
+#@end core/mass-edit58
+#@begin CombineDataCleaningChanges
+#@in name_3
+#@in sponsor_6
+#@in event_10
+#@in venue_10
+#@in place_4
+#@in occasion_4
+#@in notes_3
+#@in call_number_2
+#@in keywords
+#@in remove-keywords
+#@in language
+#@in remove-language
+#@in location_type
+#@in remove-location_type
+#@in date_2
+#@in location_8
+#@in currency_3
+#@in status_1
+#@out CleanData
+#@end CombineDataCleaningChanges
+#@end Parallel_OR
